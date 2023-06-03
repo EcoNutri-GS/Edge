@@ -14,61 +14,68 @@ A simulação pode ser acessada no [Projeto Tinkercad](https://www.tinkercad.com
 
 ---
 
-# Controle de Umidade, Temperatura e Luminosidade para Armazenamento de Alimentos Perecíveis
-Este é um código para um sistema de controle que monitora e exibe a umidade, temperatura e luminosidade ideais para o armazenamento de alimentos perecíveis. O sistema utiliza sensores para coletar informações dos ambientes e aciona LEDs indicadores e um display LCD para fornecer feedback visual sobre as condições de armazenamento.
+# ***EcoNutri: Sistema de Armazenamento Inteligente***
+
+- O sistema de armazenamento inteligente EcoNutri foi desenvolvido para monitorar e controlar as condições de armazenamento de carnes, hortaliças, laticínios e produtos congelados. 
+- Ele utiliza sensores de umidade e temperatura para garantir que os alimentos sejam armazenados nas condições ideais. Este readme fornecerá informações sobre os componentes do sistema, o seu funcionamento e como utilizá-lo.
 
 ---
 
-## Componentes Utilizados
-- Arduino
-- Display LCD (compatível com a biblioteca LiquidCrystal)
-- LEDs vermelho, amarelo e verde
-- Sensor de umidade (fotorresistor)
+## ***Componentes Utilizados :***
+
+- Arduino Uno (ou similar)
+- Display LCD (16x2 caracteres)
 - Sensor de temperatura
-- Sensor de luminosidade
+- Sensor de umidade
 - Potenciômetro
+- Motor
+- Interruptor
 
 ---
 
-## Funcionamento
-O sistema é composto pelas seguintes etapas:
+## ***Funcionamento***
 
-1. Configuração inicial: Definição dos pinos utilizados, inicialização do display LCD e configuração dos pinos como entradas ou saídas.
+O sistema EcoNutri monitora constantemente as condições de umidade e temperatura do ambiente de armazenamento. Com base nas configurações definidas, ele controla o motor para ligar ou desligar os umidificadores e refrigeradores, garantindo que as condições de armazenamento sejam adequadas para cada tipo de alimento.
 
-2. Loop principal: O código entra em um loop infinito, onde são coletadas as leituras dos sensores e realizado o processamento dos valores.
 
-3. Leitura dos sensores: Os valores dos sensores de temperatura, luminosidade e potenciômetro são lidos e convertidos para as unidades adequadas.
 
-4. Controle de Luminosidade:
+### O sistema funciona da seguinte maneira :
 
-- O valor lido do fotorresistor é verificado para determinar o nível de luminosidade.
-- Com base no valor lido, os LEDs indicadores são acionados e uma mensagem correspondente é exibida no display LCD.
-
-5. Controle de Umidade:
-
-- O valor lido do sensor de luminosidade é verificado para determinar o nível de umidade.
-- Com base no valor lido, os LEDs indicadores são acionados e uma mensagem correspondente é exibida no display LCD.
-
-6. Controle de Temperatura:
-
-- O valor lido do sensor de temperatura é verificado para determinar a temperatura atual.
-- Com base no valor lido, os LEDs indicadores são acionados e uma mensagem correspondente é exibida no display LCD.
-
-7. Delay e limpeza do display: Após cada ciclo de verificação, um atraso é introduzido para evitar leituras repetidas muito rápidas. Em seguida, o display LCD é limpo para a próxima atualização.
+1. O sensor de umidade e temperatura coleta os dados do ambiente de armazenamento.
+2. Com base na configuração selecionada (carnes, hortaliças, laticínios ou congelados), o sistema define os valores de umidade e temperatura ideais para esse tipo de alimento.
+3. O display LCD exibe as informações sobre o status do sistema e as condições de armazenamento.
+4. O sistema compara as leituras dos sensores com os valores ideais definidos.
+5. Se a umidade estiver abaixo do valor ideal, o sistema liga os umidificadores e exibe um aviso no display LCD.
+6. Se a umidade estiver dentro da faixa ideal, o sistema mantém os umidificadores desligados e exibe a informação no display LCD.
+7. Se a umidade estiver acima do valor ideal, o sistema desliga os umidificadores e exibe um aviso no display LCD.
+8. O mesmo processo é realizado para o controle da temperatura.
+9. O motor é acionado para controlar os umidificadores e refrigeradores conforme necessário.
+10. O sistema continua monitorando e controlando as condições de armazenamento enquanto estiver ligado.
 
 ---
 
-## Utilização
+## ***Utilização***
+1. Monte o circuito: Conecte os componentes conforme o esquema de pinagem especificado no código.
 
-1. Conecte os componentes ao Arduino de acordo com o esquema de circuito adequado.
+2. Carregue o código: Faça o upload do código para o Arduino utilizando a IDE Arduino ou outro ambiente de desenvolvimento compatível.
 
-2. Carregue o código para o Arduino usando o ambiente de desenvolvimento Arduino IDE.
+3. Conecte os sensores: Certifique-se de que os sensores de umidade e temperatura estão corretamente conectados aos pinos especificados no código.
 
-3. Observe as indicações dos LEDs e as mensagens exibidas no display LCD para verificar as condições de umidade, temperatura e luminosidade.
+4. Conecte o display LCD: Conecte os pinos do display LCD aos pinos especificados no código.
 
-4. Ajuste o potenciômetro para controlar a luminosidade desejada.
+5. Conecte o motor: Conecte o motor aos pinos especificados no código, garantindo que ele esteja corretamente ligado aos umidificadores e refrigeradores.
 
-5. Personalize as faixas de valores para determinar as condições ideais de acordo com as necessidades específicas de armazenamento dos alimentos perecíveis.
+6. Alimentação: Certifique-se de fornecer energia ao Arduino e aos componentes conforme necessário.
 
-### Observação: 
-Este código é uma base para o sistema de controle e pode ser adaptado e expandido de acordo com os requisitos do projeto específico.
+7. onfiguração do sistema: No código, é possível ajustar os valores de umidade e temperatura para cada tipo de alimento (carnes, hortaliças, laticínios e congelados) de acordo com as recomendações de armazenamento.
+
+8. Inicialização: Ao ligar o sistema, ele será inicializado e exibirá uma sequência de mensagens no display LCD.
+
+9. Monitoramento e controle: O sistema continuamente monitora as condições de umidade e temperatura do ambiente de armazenamento. Com base nas configurações definidas, ele controla o motor para ligar ou desligar os umidificadores e refrigeradores, mantendo as condições de armazenamento adequadas para cada tipo de alimento.
+
+10. Interrupção do sistema: Utilize o interruptor para ligar ou desligar o sistema de armazenamento. Quando o sistema estiver desligado, ele exibirá uma mensagem correspondente no display LCD.
+
+
+#### *Observação:* 
+ - Este código é uma base para o sistema de controle e pode ser adaptado e expandido de acordo com os requisitos do projeto específico.
+- Certifique-se de seguir as boas práticas de segurança ao manipular componentes eletrônicos e ao lidar com alimentos.
