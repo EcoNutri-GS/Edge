@@ -1,6 +1,7 @@
 # EcoNutri EDGE - ESR1
 
 A simulação pode ser acessada no [Projeto Tinkercad](https://www.tinkercad.com/things/cOnHbPL0HSP-copy-of-teste-checkpoint2/editel?sharecode=7KcIDXtigldqlVauARKeTTgSLMGuVG_u2WQ833VMUMg).
+O vídeo explicativo do projeto pode ser acessado no [Youtube](https://youtu.be/QrOUGDzAkv4).
 
 ---
 
