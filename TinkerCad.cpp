@@ -78,7 +78,7 @@ void loop()
     umidadeBaixa = 0.90;
     temperaturaAlta = 10;
     temperaturaBaixa = 2; 
-    telaArmazem = "HORTALIÇAS";
+    telaArmazem = "HORTALICAS";
   } else if (interruptorLaticinios==HIGH)  {
     umidadeAlta = 0.95;
     umidadeBaixa = 0.75;
